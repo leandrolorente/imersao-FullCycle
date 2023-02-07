@@ -1,8 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/leandrolorente/imersao-FullCycle/application/route"
+)
 
 func main() {
-    name := "Go Developers"
-    fmt.Println("Azure for", name)
+	route := route.Route{
+		ID:       "1",
+		ClientID: "1",
+	}
+
+	route.LoadPositions()
+
+	stringjson, _ := route.ExportJsonPositions()
+	fmt.Println(stringjson[0])
 }

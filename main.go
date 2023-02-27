@@ -26,7 +26,7 @@ func main() {
 	/*producer := kafka2.NewKafkaProducer()
 	kafka2.Publish("Ola", "readtest", producer)*/
 	for msg := range msgChan {
-		
+
 		fmt.Println(string(msg.Value))
 		go kafka.Produce(msg)
 	}

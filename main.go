@@ -29,6 +29,7 @@ func main() {
 
 		fmt.Println(string(msg.Value))
 		go kafka.Produce(msg)
+
 	}
 	/*route := route.Route{
 		ID:       "1",

@@ -22,7 +22,6 @@ func main() {
 	msgChan := make(chan *ckafka.Message)
 	consumer := kafka2.NewKafkaConsumer(msgChan)
 	go consumer.Consume()
-
 	/*producer := kafka2.NewKafkaProducer()
 	kafka2.Publish("Ola", "readtest", producer)*/
 	for msg := range msgChan {
